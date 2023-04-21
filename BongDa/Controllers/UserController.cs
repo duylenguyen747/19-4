@@ -24,7 +24,22 @@ namespace BongDa.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUser()
         {
-            return Ok(await _context.Users.ToListAsync());
+            //hiển thị cả tên và các thông tin cần lấy, sử dụng join trong linq
+            var result = await (
+                from u in _context.Users //từ Người dùng
+                join p in _context.Pitchs // join đến Sân bóng
+                on u.Id equals p.UserId
+                select new
+                {
+                    Id = u.Id,
+                    Name = u.Name,
+                    Age = u.Age,
+                    Number = u.Number,
+                    Address = u.Address,
+                    Pitch = string.Format("{0} {1} ", p.NamePitch, p.NumberPitch)
+                }
+                ).ToListAsync();
+            return Ok(result);
         }
         //[HttpGet("{id}")]
         //public async Task<IActionResult> GetById(int id)

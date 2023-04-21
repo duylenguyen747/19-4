@@ -28,10 +28,10 @@ namespace BongDa.Controllers
                 select new
                 {
                     Id = p.Id,
-                    Name = p.Name,
+                    Name = p.NamePitch,
                     NumberPitch = p.NumberPitch,
                     Description = p.Description,
-                    User = string.Format("{0} {1} {2}",u.Name,u.Age,u.Address)
+                    User = string.Format("{0} {1} {2} {3}",u.Number, u.Name,u.Age,u.Address)
                 }
                 ).ToListAsync();
             return Ok(result);
@@ -52,7 +52,7 @@ namespace BongDa.Controllers
             var pitch = new Pitch()
             {
                 Id = new int(),
-                Name = request.Name,
+                NamePitch = request.NamePitch,
                 NumberPitch = request.NumberPitch,
                 Description = request.Description,
                 UserId = request.UserId
@@ -67,7 +67,7 @@ namespace BongDa.Controllers
             var pitch = await _context.Pitchs.FindAsync(id);
             if (pitch == null) return NotFound("Không tìm thấy sân bóng");
 
-            pitch.Name = request.Name;
+            pitch.NamePitch = request.NamePitch;
             pitch.NumberPitch = request.NumberPitch;
             pitch.Description = request.Description;
             pitch.UserId = request.UserId;  
@@ -82,6 +82,11 @@ namespace BongDa.Controllers
             var pitch = await _context.Pitchs.FindAsync(id);
             if (pitch == null)
                 return NotFound("Không tìm thấy Sân bóng");
+
+
+            var count = await _context.Users.CountAsync(x => x.Id == id);
+            if (count > 0) return BadRequest("Không thể xóa khi đã có người đặt sân");
+
             _context.Pitchs.Remove(pitch);
             await _context.SaveChangesAsync();
             return Ok("Sân bóng đã được xóa");
