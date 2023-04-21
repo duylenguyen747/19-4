@@ -2231,11 +2231,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Excersice\\BongDa\\BongDa\\BongDa.csproj",
+      "projectUniqueName": "C:\\Excersice\\19-4\\BongDa\\BongDa.csproj",
       "projectName": "BongDa",
-      "projectPath": "C:\\Excersice\\BongDa\\BongDa\\BongDa.csproj",
+      "projectPath": "C:\\Excersice\\19-4\\BongDa\\BongDa.csproj",
       "packagesPath": "C:\\Users\\duy.nguyen.le\\.nuget\\packages\\",
-      "outputPath": "C:\\Excersice\\BongDa\\BongDa\\obj\\",
+      "outputPath": "C:\\Excersice\\19-4\\BongDa\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\duy.nguyen.le\\AppData\\Roaming\\NuGet\\NuGet.Config",

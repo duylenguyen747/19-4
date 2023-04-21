@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "egz3fHTZifonaU9PDvzc6tpafWxvw6qsdHcLhmz9KAi8Gh0scXlNHYPbqSEp92KwB2vRBS8pt2KgVZubnCh10Q==",
+  "dgSpecHash": "6MjZowzYxxV8Xl23VvMTA/psBlgdjIcJFc6+ulvuU6ETDVwxAH3hpjtBZ6LjKtyZ99iiGyS9OvDA3Ey7yA9J1Q==",
   "success": true,
-  "projectFilePath": "C:\\Excersice\\BongDa\\BongDa\\BongDa.csproj",
+  "projectFilePath": "C:\\Excersice\\19-4\\BongDa\\BongDa.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\duy.nguyen.le\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\duy.nguyen.le\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
